@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f7f7f7;
+  color: #222;
+}
+
+header.hero {
+  background: #111;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: white;
+  color: #111;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-btn:hover {
+  background: #ddd;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.project-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1 1 200px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.hero h1 {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.hero h1.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.contact-btn {
+  animation: pulse 2s infinite;
+}
+
+.contact-btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 600px) {
+  .project-list {
+    flex-direction: column;
+  }
+
+  .project-card {
+    flex: 1 1 auto;
+  }
+
+  .contact-btn {
+    width: 100%;
+  }
+
+  section {
+    padding: 20px;
+  }
+}
